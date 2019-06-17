@@ -35,7 +35,7 @@ def bot_loop():
 
 			for pattern in config.COLOUR:
 				if re.match(pattern[0], message):
-					subprocess.call('sudo node tplight hex 192.168.0.21 #6441a5')
+					subprocess.call("tplight hex 192.168.0.21 '#6441a5'", shell=True)
 
 			for pattern in config.BAN_PAT:
 				if re.match(pattern, message):
