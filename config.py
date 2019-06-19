@@ -9,18 +9,18 @@ BAN_PAT = [
 ]
 SUBSCRIBER = [
 	[r"Thank you for the sub!"],
-	[r"'username', Thank you for being subscribed for 'months' months!"],
-	[r"'username', Thank you for gifting a sub to 'targetname'! So kind <3 !"],
-	[r"'username', Thank you for gifting a 'amount' 'tier' subscriptions! So kind <3 !"],
+	[r"Thank you for being subscribed for"],
+	[r"Thank you for gifting a sub to"],
+	[r"Thank you for gifting a"],
 ]
 CHEER = [
-	[r"'username' just cheered with 'bits', and has cheered a total of 'totalbits'!"],
+	[r"just cheered with"],
 ]
 DONATION = [
-	[r"'username', Thank you for the donation of 'amount' GBP!"],
+	[r"Thank you for the donation of"],
 ]
 FOLLOWER = [
-	[r"'username', Thank you for the follow!"],
+	[r"Thank you for the follow!"],
 ]
 
 COLOUR = [
