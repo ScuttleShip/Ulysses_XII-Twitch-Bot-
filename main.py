@@ -32,19 +32,19 @@ def bot_loop():
 			print(username + ": " + response)
 
 			for pattern in config.FOLLOWER:
-				if re.match(pattern[0], message):
+				if re.search(pattern[0], message):
 					subprocess.call('tplight hex 192.168.0.21 "#FF69B4"', shell=True)
 
 			for pattern in config.SUBSCRIBER:
-				if re.match(pattern[0], message):
+				if re.search(pattern[0], message):
 					subprocess.call('tplight hex 192.168.0.21 "#6441a5"', shell=True)
 
 			for pattern in config.COMMANDS:
-				if re.match(pattern[0], message):
+				if re.search(pattern[0], message):
 					utility.chat(s,pattern[1])
 
 			for pattern in config.COLOUR:
-				if re.match(pattern[0], message):
+				if re.search(pattern[0], message):
 					subprocess.call('tplight hex 192.168.0.21 "#6441a5"', shell=True)
 
 			for pattern in config.BAN_PAT:
