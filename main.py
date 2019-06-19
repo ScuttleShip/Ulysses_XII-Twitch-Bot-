@@ -1,4 +1,4 @@
-#!/usr/bin/evn python
+##!/usr/bin/evn python
 import config
 import utility
 import socket
@@ -20,6 +20,7 @@ except Exception as e:
 	connected = False #Socket failed to connect
 
 def bot_loop():
+
 	while connected:
 		response = s.recv(1024).decode("utf-8")
 		if response == "PING :tmi.twitch.tv\r\n":
@@ -29,19 +30,28 @@ def bot_loop():
 			username = re.search(r"\w+", response).group(0)
 			message = CHAT_MSG.sub("", response)
 			print(username + ": " + response)
+
+			for pattern in config.FOLLOWER:
+				if re.match(pattern[0], message):
+					subprocess.call('tplight hex 192.168.0.21 "#FF69B4"', shell=True)
+
+			for pattern in config.SUBSCRIBER:
+				if re.match(pattern[0], message):
+					subprocess.call('tplight hex 192.168.0.21 "#6441a5"', shell=True)
+
 			for pattern in config.COMMANDS:
 				if re.match(pattern[0], message):
 					utility.chat(s,pattern[1])
 
 			for pattern in config.COLOUR:
 				if re.match(pattern[0], message):
-					subprocess.call("tplight hex 192.168.0.21 '#6441a5'", shell=True)
+					subprocess.call('tplight hex 192.168.0.21 "#6441a5"', shell=True)
 
 			for pattern in config.BAN_PAT:
 				if re.match(pattern, message):
 					utility.ban(s, username)
 					break
-		print(config.RATE)
+
 		time.sleep(1 / config.RATE)
 
 if __name__ ==  "__main__":
