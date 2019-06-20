@@ -26,3 +26,9 @@ def timeout(sock, user, secs=600):
 	secs -- the length of the timeout in seconds (default 600)
 	"""
 	chat(sock, ".timeout {}".format(user, secs))
+def on_usernotice(sock, channel, msg):
+	"""
+	sock -- the socket ofer which to send the message
+	msg -- the message to be sent
+	"""
+	sock.send(("PRIVMSG {} :{}\r\n".format(config.CHAN, msg)).encode("UTF-8"))
