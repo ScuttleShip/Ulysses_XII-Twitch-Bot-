@@ -8,7 +8,7 @@ BAN_PAT = [
 	r"xxxx",
 ]
 SUBSCRIBER = [
-	[r"Thank you for the sub!"],
+	[r"{:tmi.twitch.tv USERNOTICE CHAN :message}"],
 	[r"Thank you for being subscribed for"],
 	[r"Thank you for gifting a sub to"],
 	[r"Thank you for gifting a"],
