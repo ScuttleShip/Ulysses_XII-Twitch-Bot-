@@ -31,13 +31,16 @@ def bot_loop():
 			message = CHAT_MSG.sub("", response)
 			print(username + ": " + response)
 
+			if response == ":tmi.twitch.tv USERNOTICE .format(config.CHAN) message":
+				subprocess.call('tplight hex 192.168.0.21 "#6441a5"', shell=True)
+
 			for pattern in config.FOLLOWER:
 				if re.search(pattern[0], message):
 					subprocess.call('tplight hex 192.168.0.21 "#FF69B4"', shell=True)
 
 			for pattern in config.SUBSCRIBER:
 				if re.search(pattern[0], message):
-					subprocess.call('tplight hex 192.168.0.21 "#6441a5"', shell=True)
+					subprocess.call('', shell=True)
 
 			for pattern in config.COMMANDS:
 				if re.search(pattern[0], message):
