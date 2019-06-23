@@ -8,7 +8,6 @@ BAN_PAT = [
 	r"xxxx",
 ]
 SUBSCRIBER = [
-	[r"{:tmi.twitch.tv USERNOTICE CHAN :message}"],
 	[r"Thank you for being subscribed for"],
 	[r"Thank you for gifting a sub to"],
 	[r"Thank you for gifting a"],
@@ -28,6 +27,5 @@ COLOUR = [
 	[r"!green", "Changing the light to Green"],
 ]
 COMMANDS = [
-[r"!invdiscord","Join the TI discord here: https://discord.gg/My9emf8"],
+	[r"!invdiscord","Join the TI discord here: https://discord.gg/My9emf8"],
 ]
-
